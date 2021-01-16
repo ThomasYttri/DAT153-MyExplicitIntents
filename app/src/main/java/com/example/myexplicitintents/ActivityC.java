@@ -17,10 +17,12 @@ public class ActivityC extends AppCompatActivity {
             return;
         }
         String aString = extras.getString("aString");
+        System.out.println(aString);
         final TextView textViewAnswer = findViewById(R.id.textViewAnswer);
         textViewAnswer.setText(aString);
 
         String qString = extras.getString("qString");
+        System.out.println(qString);
         final TextView textViewQuestion = findViewById(R.id.textViewQuestion);
         textViewQuestion.setText(qString);
 

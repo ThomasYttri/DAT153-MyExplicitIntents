@@ -27,11 +27,19 @@ public class ActivityB extends AppCompatActivity {
     }
 
     public void answerQuestion(View view){
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            return;
+        }
+        String qString = extras.getString("qString");
+
         Intent i = new Intent(this, ActivityC.class);
 
         final EditText editText2 = findViewById(R.id.editText2);
         String myString = editText2.getText().toString();
         i.putExtra("aString", myString);
+        i.putExtra("qString", qString);
+
         startActivity(i);
     }
 }
